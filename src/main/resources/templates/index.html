@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+<title>本情報</title>
+</head>
+<body>
+<h1>本情報</h1>
+<table>
+<tr>
+<th>ID</th>
+<th>タイトル</th>
+<th>価格</th>
+</tr>
+<tr th:each="bookList : ${bookList}">
+  <td><a th:href="@{/show(id=${bookList.id})}">[[${bookList.id}]]</a></td>
+  <td>[[${bookList.title}]]</td>
+  <td>[[${bookList.price}]]</td>
+</tr>
+</table>
+<p><a th:href="@{/insIndex}">新規登録</a></p>
+</body>
+</html>

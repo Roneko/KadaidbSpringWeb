@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+<title>本情報</title>
+</head>
+<body>
+<h1>本情報</h1>
+<form th:action="@{/update}" th:object="${booksForm}" method="post">
+	<!-- *は変数のこと -->
+	<input type="hidden" th:field="*{id}">
+	<p>タイトル：<input type="text" th:field="*{title}"></p>
+	<p>価格：<input type="text" th:field="*{price}"></p>
+	<input type="submit" value="更新"/>
+	<!-- getの渡し方 -->
+	<p><a th:href="@{/delete(id=*{id})}">削除する</a></p>
+</form>
+<p><a href="http://localhost:8081/index">前の画面に戻る</a></p>
+</body>
+</html>
