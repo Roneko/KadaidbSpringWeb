@@ -2,16 +2,16 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8"></meta>
-<title>本情報</title>
+<title>情報</title>
 </head>
 <body>
-<h1>本情報</h1>
-<form th:action="@{/insert}" th:object="${booksForm}" method="post">
+<h1>情報</h1>
+<form th:action="@{/insert}" th:object="${personForm}" method="post">
 	<!-- *は変数のこと -->
-	<p>タイトル：<input type="text" th:field="*{title}"></p>
-	<p>価格：<input type="text" th:field="*{price}"></p>
+	<p>名前：<input type="text" th:field="*{Name}"></p>
+	<p>年齢：<input type="text" th:field="*{Age}"></p>
 	<input type="submit" value="登録"/>
 </form>
-<p><a href="http://localhost:8081/index">前の画面に戻る</a></p>
+<p><a href="http://localhost:8084/index">前の画面に戻る</a></p>
 </body>
 </html>
